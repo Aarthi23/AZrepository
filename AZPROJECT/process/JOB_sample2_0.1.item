@@ -273,7 +273,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME!=  row2.FIRST_NAME ?&quot;Y&quot;:&quot;N&quot; " type="id_String"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="OUT" expressionFilter="Var.FIRST_NAME.EQUALS(&quot;Y&quot;)" activateExpressionFilter="true">
+      <outputTables sizeState="INTERMEDIATE" name="OUT" expressionFilter="Var.FIRST_NAME.equal(&quot;Y&quot;)" activateExpressionFilter="true">
         <mapperTableEntries name="EMPLOYEE_ID" expression="row1.EMPLOYEE_ID" type="id_BigDecimal"/>
         <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME" type="id_String" nullable="true"/>
         <mapperTableEntries name="LAST_NAME" expression="row1.LAST_NAME" type="id_String"/>
