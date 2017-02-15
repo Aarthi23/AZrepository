@@ -118,7 +118,7 @@
     <routinesParameter id="_JNWx4PKsEeawl5QamhGO2w" name="TalendDate"/>
     <routinesParameter id="_JNf70PKsEeawl5QamhGO2w" name="TalendString"/>
   </parameters>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="192">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleInput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_KKzPUPNhEeaxwN7EwwS5rg" show="false"/>
@@ -221,7 +221,7 @@
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="256" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -266,11 +266,14 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
-      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <varTables sizeState="INTERMEDIATE" name="Var">
+        <mapperTableEntries name="var1" expression="row1.EMPLOYEE_ID=row2.EMPLOYEE_ID?'Y':'N' " type="id_Character"/>
+      </varTables>
       <outputTables sizeState="INTERMEDIATE" name="OUT">
         <mapperTableEntries name="EMPLOYEE_ID" expression="row1.EMPLOYEE_ID" type="id_BigDecimal"/>
         <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME" type="id_String" nullable="true"/>
@@ -283,6 +286,7 @@
         <mapperTableEntries name="COMMISSION_PCT" expression="row1.COMMISSION_PCT" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="MANAGER_ID" expression="row1.MANAGER_ID" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="DEPARTMENT_ID" expression="row1.DEPARTMENT_ID" type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="var1" expression="Var.var1 " type="id_Character"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="EMPLOYEE_ID" type="id_BigDecimal"/>
@@ -297,7 +301,7 @@
         <mapperTableEntries name="MANAGER_ID" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="DEPARTMENT_ID" type="id_BigDecimal" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row2" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE" innerJoin="true">
+      <inputTables sizeState="INTERMEDIATE" name="row2" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="EMPLOYEE_ID" expression="row1.EMPLOYEE_ID " type="id_BigDecimal" operator="="/>
         <mapperTableEntries name="FIRST_NAME" type="id_String" nullable="true"/>
         <mapperTableEntries name="LAST_NAME" type="id_String"/>
@@ -312,7 +316,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="192">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleOutput_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tOracleConnection_1"/>
@@ -400,6 +404,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="var1"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -446,6 +455,7 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="CHAR" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
     <metadata connector="REJECT" label="EMPLOYEES" name="REJECT">
@@ -482,12 +492,13 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="CHAR" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
   </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="320">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleInput_2" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tOracleConnection_1"/>
@@ -584,7 +595,7 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="32">
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleConnection_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_KKzPUPNhEeaxwN7EwwS5rg" show="false"/>
@@ -616,11 +627,24 @@
     <elementParameter field="TEXT" name="LABEL" value="OracleConn"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleClose_1" show="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tOracleConnection_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tOracleInput_1" offsetLabelX="0" offsetLabelY="0" source="tOracleInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tOracleInput_1" offsetLabelX="0" offsetLabelY="0" source="tOracleInput_1" target="tOracleClose_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
+  </connection>
   <connection connectorName="FLOW" label="OUT" lineStyle="0" metaname="OUT" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tOracleOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="var1"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OUT" show="false"/>
   </connection>
@@ -673,6 +697,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleConnection_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tOracleClose_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
