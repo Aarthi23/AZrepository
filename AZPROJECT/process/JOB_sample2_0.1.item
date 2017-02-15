@@ -297,7 +297,7 @@
         <mapperTableEntries name="MANAGER_ID" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="DEPARTMENT_ID" type="id_BigDecimal" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row2" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="row2" activateCondensedTool="true" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE" innerJoin="true">
         <mapperTableEntries name="EMPLOYEE_ID" expression="row1.EMPLOYEE_ID " type="id_BigDecimal" operator="="/>
         <mapperTableEntries name="FIRST_NAME" type="id_String" nullable="true"/>
         <mapperTableEntries name="LAST_NAME" type="id_String"/>
