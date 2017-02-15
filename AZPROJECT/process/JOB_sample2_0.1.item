@@ -266,15 +266,14 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
-        <mapperTableEntries name="var1" expression="row1.EMPLOYEE_ID=row2.EMPLOYEE_ID?'Y':'N' " type="id_Character"/>
+        <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME!=  row2.FIRST_NAME ?&quot;Y&quot;:&quot;N&quot; " type="id_String"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="OUT">
+      <outputTables sizeState="INTERMEDIATE" name="OUT" expressionFilter="Var.FIRST_NAME.EQUALS(&quot;Y&quot;)" activateExpressionFilter="true">
         <mapperTableEntries name="EMPLOYEE_ID" expression="row1.EMPLOYEE_ID" type="id_BigDecimal"/>
         <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME" type="id_String" nullable="true"/>
         <mapperTableEntries name="LAST_NAME" expression="row1.LAST_NAME" type="id_String"/>
@@ -286,7 +285,6 @@
         <mapperTableEntries name="COMMISSION_PCT" expression="row1.COMMISSION_PCT" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="MANAGER_ID" expression="row1.MANAGER_ID" type="id_BigDecimal" nullable="true"/>
         <mapperTableEntries name="DEPARTMENT_ID" expression="row1.DEPARTMENT_ID" type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="var1" expression="Var.var1 " type="id_Character"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="EMPLOYEE_ID" type="id_BigDecimal"/>
@@ -404,11 +402,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="var1"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -455,7 +448,6 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="CHAR" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
     </metadata>
     <metadata connector="REJECT" label="EMPLOYEES" name="REJECT">
@@ -492,7 +484,6 @@
       <column comment="Department id where employee works; foreign key to department_id&#xA;column of the departments table" key="false" length="4" name="DEPARTMENT_ID" nullable="true" pattern="" precision="0" sourceType="DEC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value="Department id where employee works; foreign key to department_id&#xA;column of the departments table"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="var1" nullable="false" pattern="" precision="-1" sourceType="CHAR" type="id_Character" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value="employees table. Contains 107 rows. References with departments,&#xA;jobs, job_history tables. Contains a self reference."/>
