@@ -110,7 +110,7 @@
     <routinesParameter id="_JNWx4PKsEeawl5QamhGO2w" name="TalendDate"/>
     <routinesParameter id="_JNf70PKsEeawl5QamhGO2w" name="TalendString"/>
   </parameters>
-  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="96">
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="12" offsetLabelY="-2" posX="96" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_3" show="false"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;C:/Talend/6.2.1/studio/workspace/files&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
@@ -137,7 +137,7 @@
     <elementParameter field="CLOSED_LIST" name="FILE_FORMAT" value="PROPERTIES_FORMAT"/>
     <elementParameter field="CLOSED_LIST" name="RETRIVE_MODE" value="RETRIVE_BY_SECTION" show="false"/>
     <elementParameter field="TEXT" name="SECTION_NAME" value="&quot;section&quot;" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;))"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Talend/6.2.1/studio/workspace/files&quot; ((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;))"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
