@@ -337,7 +337,7 @@
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="empid" expression="row1.empid " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="empname" expression="row1.empname  row1.ename " type="id_String" nullable="true"/>
+        <mapperTableEntries name="empname" expression="row1.ename " type="id_String" nullable="true"/>
         <mapperTableEntries name="sal" expression="row1.sal " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="newsal" expression="Var.newsal " type="id_Integer"/>
       </outputTables>
