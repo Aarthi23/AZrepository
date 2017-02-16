@@ -110,7 +110,7 @@
     <routinesParameter id="_JNWx4PKsEeawl5QamhGO2w" name="TalendDate"/>
     <routinesParameter id="_JNf70PKsEeawl5QamhGO2w" name="TalendString"/>
   </parameters>
-  <node componentName="tS3Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="96">
+  <node componentName="tS3Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tS3Connection_1" show="false"/>
     <elementParameter field="TEXT" name="ACCESS_KEY" value="&quot;AKIAICD7K3NBJ5FLMSTA&quot;"/>
     <elementParameter field="PASSWORD" name="SECRET_KEY" value="FUnjx5JIDoPCEBUZnn0oIjhQE0+eJPZswtS7YCYI4pEt8jzf+VghuGYIgOkcZcrr"/>
@@ -130,7 +130,7 @@
     <elementParameter field="TABLE" name="CLIENT_CONFIGURATION" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tS3BucketCreate" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="192">
+  <node componentName="tS3BucketCreate" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tS3BucketCreate_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tS3Connection_1"/>
