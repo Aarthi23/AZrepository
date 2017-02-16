@@ -4,7 +4,7 @@
     <contextParameter comment="" name="incentives" prompt="incentives?" promptNeeded="true" repositoryContextId="_ocAYYPQvEeav7csWYGVKVw" type="id_Integer" value="500"/>
   </context>
   <parameters>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="100" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="96" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -337,7 +337,7 @@
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="empid" expression="row1.empid " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="empname" expression="row1.empname " type="id_String" nullable="true"/>
+        <mapperTableEntries name="empname" expression="row1.empname  row1.ename " type="id_String" nullable="true"/>
         <mapperTableEntries name="sal" expression="row1.sal " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="newsal" expression="Var.newsal " type="id_Integer"/>
       </outputTables>
