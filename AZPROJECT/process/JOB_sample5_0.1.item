@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="incentives" prompt="incentives?" promptNeeded="false" repositoryContextId="_ocAYYPQvEeav7csWYGVKVw" type="id_Integer" value="500"/>
+    <contextParameter comment="" name="incentives" prompt="incentives?" promptNeeded="true" repositoryContextId="_ocAYYPQvEeav7csWYGVKVw" type="id_Integer" value="500"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
