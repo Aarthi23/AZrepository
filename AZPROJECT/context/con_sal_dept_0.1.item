@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_KorMQPUQEea799U02gvJzw" confirmationNeeded="false" name="Default">
-  <contextParameter xmi:id="_KorMQfUQEea799U02gvJzw" comment="" name="salary" prompt="salary?" promptNeeded="false" type="id_Integer" value=""/>
-  <contextParameter xmi:id="_KorMQvUQEea799U02gvJzw" comment="" name="dept_id" prompt="dept_id?" promptNeeded="false" type="id_Integer" value=""/>
+  <contextParameter xmi:id="_KorMQfUQEea799U02gvJzw" comment="" name="salary" prompt="salary?" promptNeeded="false" type="id_Integer" value="$$sal"/>
+  <contextParameter xmi:id="_KorMQvUQEea799U02gvJzw" comment="" name="dept_id" prompt="dept_id?" promptNeeded="false" type="id_Integer" value="$$deptid"/>
 </talendfile:ContextType>
