@@ -121,6 +121,7 @@
       <relatedItems xmi:id="_WJB9AfUDEea799U02gvJzw" id="DataQualityDependencies" version="Latest" type="routine"/>
       <relatedItems xmi:id="_WJB9AvUDEea799U02gvJzw" id="MDM" version="Latest" type="routine"/>
       <relatedItems xmi:id="_WJB9A_UDEea799U02gvJzw" id="_KKzPUPNhEeaxwN7EwwS5rg - EMPLOYEES" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_Y08BMPUREea799U02gvJzw" id="_KoZfcPUQEea799U02gvJzw" version="Latest" type="context"/>
     </ItemsRelations>
     <migrationTask xmi:id="_JCDg0PKsEeawl5QamhGO2w" id="org.talend.repository.localprovider.RemoveRoutineFolderTask" breaks="5.1.1" version="5.1.2" status="noimpact"/>
     <migrationTask xmi:id="_JCDg0fKsEeawl5QamhGO2w" id="org.talend.repository.localprovider.model.migration.ChangeXmiSerialization" breaks="5.1.1" version="5.1.2" status="noimpact"/>
